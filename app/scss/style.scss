@@ -1,0 +1,72 @@
+@import "../../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../../node_modules/uikit/src/scss/mixins-theme.scss";
+@import "../../node_modules/uikit/src/scss/uikit-theme.scss";
+
+$panel-height: 70px;
+
+* {
+    box-sizing: border-box;
+}
+
+.panel {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    height: $panel-height;
+    border-bottom: 2px solid black;
+}
+
+iframe {
+    position: absolute;
+    top: $panel-height;
+    left: 0;
+    height: calc(100vh - #{$panel-height});
+    width: 100%;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s all;
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+    div {
+        color: #fff;
+        fill: #fff;
+    }
+}
+
+.login-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba( black, .6);
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    .login {
+        width: 600px;
+        background-color: #fff;
+        padding: 30px;
+    }
+}
+
+.login-error {
+    display: block;
+    color: red;
+    margin: 10px;
+}
